@@ -57,7 +57,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductDto> getAll() {
-        return productDao.findAll().stream()
+        return productDao.findAllByAvailableIsTrue().stream()
                 .map(product -> {
                     ProductDto productDto = modelMapper.map(product, ProductDto.class);
                     return productDto;

@@ -26,7 +26,7 @@ import { Configuration }                                     from '../configurat
 @Injectable()
 export class OrderService {
 
-    protected basePath = 'http://localhost:8010/';
+    protected basePath = 'http://localhost:8010';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
 
