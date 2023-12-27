@@ -1,4 +1,7 @@
+// login.component.ts
+
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'; // Importa il servizio Router
 import { AuthService } from 'app/api/auth.service';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -9,18 +12,15 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class LoginComponent {
 
+  loginMail?: string;
+  password?: string;
 
-  loginMail?: string ;
-  password?: string ;
+  constructor(private cookieService: CookieService, private authService: AuthService, private router: Router) {}
 
-
-  constructor(private cookieService:CookieService, private authService: AuthService) {}
-
-
-  login(){
+  login() {
     if (!this.loginMail || !this.password) {
       console.error('Email e password sono obbligatori.');
-      
+      return;
     }
 
     const loginData = {
@@ -30,12 +30,14 @@ export class LoginComponent {
 
     this.authService.login(loginData).subscribe(
       (data) => {
-      
-        this.cookieService.set("userId", data.userId) 
+        this.cookieService.set('userId', data.userId);
         // Gestisci la risposta di successo
+
         console.log('Login avvenuto con successo:', data);
-        // Salva eventuali dati di autenticazione nel cookie o altrove
-        // Esempio: this.cookieService.set('authToken', data.token);
+        
+        // Reindirizza alla homepage dopo il login
+        this.router.navigate(['/homepage']);
+        console.log('Reindirizzamento alla Homepage avvenuto con successo');
       },
       (error) => {
         // Gestisci gli errori durante il login
@@ -44,6 +46,3 @@ export class LoginComponent {
     );
   }
 }
-
-//userId?: string = this.cookieService.get("userId")
-//Number(userId)

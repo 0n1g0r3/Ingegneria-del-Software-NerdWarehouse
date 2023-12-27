@@ -1,0 +1,26 @@
+/* Stili per centrare la barra di ricerca */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Spazio vuoto per allineare il simbolo del carrello a destra */
+  .spacer {
+    flex: 1;
+  }
+  
+  /* Stili per il menu a tendina laterale */
+  .sidenav-container {
+    height: 100%;
+  }
+  
+  mat-sidenav {
+    width: 250px;
+  }
+  
+  /* Stili aggiuntivi per il contenuto della pagina */
+  .content {
+    padding: 20px;
+  }
+  

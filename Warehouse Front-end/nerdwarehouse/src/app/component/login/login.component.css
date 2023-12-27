@@ -37,8 +37,8 @@
     padding: 10px;
     font-size: 16px;
     margin-bottom: 10px;
-    border: 1px solid #ccc; /* Aggiungi un bordo per migliorare la visibilità */
-    border-radius: 4px;
+    border: 3px solid #73c01c; /* Aggiungi un bordo per migliorare la visibilità */
+    border-radius: 10px;
   }
   
   button {

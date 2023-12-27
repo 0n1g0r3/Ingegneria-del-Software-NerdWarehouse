@@ -1,0 +1,43 @@
+<!-- Barra di navigazione -->
+<div style="background-color: rgb(38, 175, 216);">
+  <mat-toolbar color="primary">
+    <!-- Icona del menu a tendina -->
+    <button mat-icon-button (click)="toggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <!-- Barra di ricerca centrata -->
+    <div class="search-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Ricerca</mat-label>
+        <input matInput placeholder="Cerca" #searchInput>
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchInput.value" (click)="searchInput.value=''; cerca()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <!-- Spazio vuoto per allineare il simbolo del carrello a destra -->
+    <span class="spacer"></span>
+
+    <!-- Icona del carrello -->
+    <button mat-icon-button (click)="openCart()">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <!-- Contenuto della pagina -->
+  <div class="content">
+    <!-- Aggiungi il tuo codice HTML esistente qui -->
+  </div>
+
+  <!-- Menu a tendina laterale -->
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="over">
+      <!-- Aggiungi qui il contenuto del tuo menu a tendina -->
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <!-- Il tuo contenuto principale qui -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
