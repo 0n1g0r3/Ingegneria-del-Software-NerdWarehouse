@@ -18,6 +18,7 @@ import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
@@ -35,14 +36,17 @@ public class AuthController {
     public Object login(HttpServletRequest req, HttpServletResponse resp, @RequestBody Map<String, String> requestBody) {
         String email = requestBody.get("email");
         String password = requestBody.get("password");
+        //TODO
         System.out.println(email);
         System.out.println(password);
         Optional<User> user = userDao.findUserByEmail(email);
+        //System.out.println(user.get());
         if (user.isPresent() && BCrypt.checkpw(password, user.get().getPassword())) {
+            Map<String, Object> response = new HashMap<>();
+            response.put( "userId", user.get().getId().toString());
             HttpSession session = req.getSession();
             resp.addCookie(new Cookie("sessionId", session.getId()));
-            resp.addCookie(new Cookie("userId", user.get().getId().toString()));
-            return ResponseEntity.ok(resp);
+            return ResponseEntity.ok(response);
         } else {
             return ResponseEntity.notFound().build();
         }

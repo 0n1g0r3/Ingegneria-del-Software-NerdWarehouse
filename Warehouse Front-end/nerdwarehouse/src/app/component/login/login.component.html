@@ -1,18 +1,21 @@
 <!-- login.component.html -->
-<div class="login-container">
+<div style="background-color: #01a2a6;">
+ <div class="login-container">
   <div class="login-header">
     <img src="../../../assets/images/logo.nerd.png" alt="Logo" class="logo">
   </div>
   <form>
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="Inserisci la tua email" required>
+      <input type="email" style="margin: 0 5px;" [(ngModel)]="loginMail" name="loginMail">
     </div>
     <div class="form-group">
       <label for="password">Password:</label>
-      <input type="password" id="password" name="password" placeholder="Inserisci la tua password" required>
+      <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Inserisci la tua password" required>
     </div>
-    <button type="submit">Accedi</button>
+    <button type="submit" (click)="login()">Accedi</button>
   </form>
   <p class="register-link">Non hai un account?<br><a routerLink="/registration">Registrati</a></p>
 </div>
+</div>
+
