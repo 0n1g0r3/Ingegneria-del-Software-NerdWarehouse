@@ -36,8 +36,13 @@
     <mat-sidenav #sidenav mode="over">
       <!-- Aggiungi qui il contenuto del tuo menu a tendina -->
     </mat-sidenav>
+
     <mat-sidenav-content>
-      <!-- Il tuo contenuto principale qui -->
+       <!--Prodotti -->
+      <div class= "card-container" style="margin-bottom: 10px;"  *ngFor="let item of product" class="card-item">
+        <app-card [item]="item"></app-card>
+      </div>
+
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

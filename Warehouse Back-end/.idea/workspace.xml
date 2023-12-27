@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dee05074-9988-44a9-bdc7-d7448557f1a4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Warehouse Front-end/nerdwarehouse/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Warehouse Front-end/nerdwarehouse/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Warehouse Front-end/nerdwarehouse/src/app/component/card/card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Warehouse Front-end/nerdwarehouse/src/app/component/card/card.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Warehouse Front-end/nerdwarehouse/src/app/component/homepage/homepage.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Warehouse Front-end/nerdwarehouse/src/app/component/homepage/homepage.component.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2a7uJQeId42P0b8w3KZ29gjlW52" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.NerdWarehouseApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Umberto/Desktop/NerdWarehouseFull/Warehouse Back-end&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="NerdWarehouse" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="NerdWarehouse" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dee05074-9988-44a9-bdc7-d7448557f1a4" name="Changes" comment="" />
+      <created>1703681865795</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1703681865795</updated>
+    </task>
+    <servers />
+  </component>
+</project>

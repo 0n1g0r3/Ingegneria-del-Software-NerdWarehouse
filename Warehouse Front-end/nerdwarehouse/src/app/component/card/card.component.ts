@@ -11,34 +11,19 @@ import { CookieService } from 'ngx-cookie-service';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
 
   productInTheCart: number | null = null;
-  isUserProduct = false;
 
-  constructor(private http : HttpClient,
-              private cartService : CartService,
+  constructor(private cartService : CartService,
               private cookieService : CookieService,
-              private router : Router,
-              private route : ActivatedRoute, 
               private navigationService : NavigationService) {
 
   }
-  ngOnInit(): void {
-    if (this.cookieService.get("role") == "MANU"){
-      this.isUserProduct=true
-    }
-  }
+ 
   @Input() item: ProductDto | undefined;
 
 
-
-
-  showProductDetails(productId : number) {
-    const currentRoute = this.router.url;
-    this.navigationService.setPreviousComponent(currentRoute);
-    this.router.navigate(['/product',  productId ]);
-  }
 
   addToCart(ID : number) {
     this.cartService.addToCart(ID);
