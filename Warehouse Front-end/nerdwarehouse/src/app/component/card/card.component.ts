@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from 'app/api/cart.service';
 import { NavigationService } from 'app/api/navigation.service';
 import { ProductDto } from 'app/model/productDto';
@@ -25,12 +24,14 @@ export class CardComponent {
 
 
 
-  addToCart(ID : number) {
-    this.cartService.addToCart(ID);
-    this.productInTheCart = ID;
-    setTimeout(() => {
-      this.productInTheCart = null;
-    }, 1000);
+  addToCart(ID? : number) {
+    if (ID !== undefined){
+      this.cartService.addToCart(ID);
+      this.productInTheCart = ID;
+      setTimeout(() => {
+        this.productInTheCart = null;
+      }, 1000);
+    }
   }
 }
 

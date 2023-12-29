@@ -1,35 +1,43 @@
-
 .product-card {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack elements vertically */
-    height: 350px; /* Set a fixed height for the card */
-    width: 180px; /* Set a fixed width for the card */
-    background-color: #f1f1f1; /* Adjust the color as needed */
-    padding: 10px;
-    border-radius: 10px;
-    position: relative; /* Enable relative positioning */
-    color: black;
-  }
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  width: 180px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  color: black;
+  overflow: hidden; /* Aggiunto overflow: hidden per nascondere il pulsante al di fuori della card */
+}
 
-  .title {
-    text-align: left;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 5px; /* Add some space below the title */
-  }
-  
-  .description {
-    width: 100%;
-    margin-bottom: 10px; /* Add some space below the description */
-  }
-  
-  .price-container {
-    position: absolute; /* Position the price container relative to the card */
-    bottom: 5px; /* Add some space from the bottom */
-    right: 5px; /* Add some space from the right */
-  }
-  
-  .price {
-    font-size: 14px;
-    font-weight: bold;
-  }  
+.title {
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.description {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.price-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+.price {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Stile del pulsante Aggiungi al carrello */
+button {
+  margin-top: 10px; /* Ridotto il margine top */
+  width: 90%; /* Impostato la larghezza al 100% della larghezza del contenitore */
+}

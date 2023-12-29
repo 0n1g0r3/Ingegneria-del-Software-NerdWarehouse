@@ -38,11 +38,12 @@
     </mat-sidenav>
 
     <mat-sidenav-content>
-       <!--Prodotti -->
-      <div class= "card-container" style="margin-bottom: 10px;"  *ngFor="let item of product" class="card-item">
-        <app-card [item]="item"></app-card>
-      </div>
-
+       <!-- Prodotti -->
+       <div class="card-container">
+         <div class="card-item" *ngFor="let item of product">
+           <app-card [item]="item"></app-card>
+         </div>
+       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

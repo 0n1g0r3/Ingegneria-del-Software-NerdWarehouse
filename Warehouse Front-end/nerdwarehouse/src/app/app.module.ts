@@ -22,7 +22,9 @@ import { MatListModule } from "@angular/material/list";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatCardModule } from "@angular/material/card";
 import { MatInputModule } from "@angular/material/input"; // Aggiunto modulo per la barra di ricerca
-import { MatFormFieldModule } from "@angular/material/form-field"; // Aggiunto modulo per la barra di ricerca
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { CartComponent } from './component/cart/cart.component';
+import { AddProductComponent } from './component/add-product/add-product.component'; // Aggiunto modulo per la barra di ricerca
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { MatFormFieldModule } from "@angular/material/form-field"; // Aggiunto m
     HomeComponent,
     LoginComponent,
     RegistrationComponent,
-    CardComponent
+    CardComponent,
+    CartComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,

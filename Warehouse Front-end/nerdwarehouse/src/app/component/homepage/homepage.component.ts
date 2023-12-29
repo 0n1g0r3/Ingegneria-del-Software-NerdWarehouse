@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit} from '@angular/core';
 import { ProductService } from 'app/api/product.service';
 import { ProductDto } from 'app/model/productDto';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -13,7 +14,8 @@ export class HomeComponent implements OnInit,OnDestroy{
   disableLoadMore = false;
   private productSubscription? : Subscription;
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService,
+              private router: Router) {}
 
   ngOnInit() : void {
     this.getAllProducts();
@@ -25,6 +27,7 @@ export class HomeComponent implements OnInit,OnDestroy{
       (data: ProductDto[]) => {
         // Update your component property with the received data
         this.product = data;
+        console.log(data)
       },
       (error) => {
         // Handle error as needed
@@ -43,7 +46,7 @@ export class HomeComponent implements OnInit,OnDestroy{
   }
 
   openCart() {
-    // Implementa la logica per la funzione openCart
+    this.router.navigate(['/cart']);
   }
 
   ngOnDestroy() : void{
