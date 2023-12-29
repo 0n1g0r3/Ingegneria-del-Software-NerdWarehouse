@@ -19,11 +19,19 @@
 
     <!-- Spazio vuoto per allineare il simbolo del carrello a destra -->
     <span class="spacer"></span>
-
+    <!-- Icona per uscire -->
+    <button mat-icon-button (click)="exit()">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+    <!-- Icona del vendi -->
+    <button mat-icon-button (click)="openSell()">
+      <mat-icon>add_box</mat-icon>
+    </button>
     <!-- Icona del carrello -->
     <button mat-icon-button (click)="openCart()">
       <mat-icon>shopping_cart</mat-icon>
     </button>
+    
   </mat-toolbar>
 
   <!-- Contenuto della pagina -->

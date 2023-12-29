@@ -11,6 +11,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class ProductDto {
+    private Long id;
     private String title;
     private Float price;
     private String description;

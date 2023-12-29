@@ -3,6 +3,8 @@ import { ProductService } from 'app/api/product.service';
 import { ProductDto } from 'app/model/productDto';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+
 
 @Component({
   selector: 'app-homepage',
@@ -15,7 +17,8 @@ export class HomeComponent implements OnInit,OnDestroy{
   private productSubscription? : Subscription;
 
   constructor(private productService: ProductService,
-              private router: Router) {}
+              private router: Router,
+              private cookieService : CookieService) {}
 
   ngOnInit() : void {
     this.getAllProducts();
@@ -44,9 +47,17 @@ export class HomeComponent implements OnInit,OnDestroy{
   toggleSidenav() {
     // Implementa la logica per la funzione toggleSidenav
   }
+  exit(){
+    this.cookieService.delete('userId')
+    this.router.navigate(['/login'])
+  }
 
   openCart() {
     this.router.navigate(['/cart']);
+  }
+
+  openSell() {
+    this.router.navigate(['/add']);
   }
 
   ngOnDestroy() : void{

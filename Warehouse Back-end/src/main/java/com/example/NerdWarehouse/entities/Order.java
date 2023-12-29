@@ -26,8 +26,8 @@ public class Order {
     @Column(name = "PAYMENT_METHOD")
     private String paymentMethod;
 
-    @OneToOne(mappedBy = "order", fetch = FetchType.LAZY)
-    private Product product ;
+    @OneToMany(mappedBy = "order", fetch = FetchType.LAZY)
+    private List <Product> productList;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_ID")

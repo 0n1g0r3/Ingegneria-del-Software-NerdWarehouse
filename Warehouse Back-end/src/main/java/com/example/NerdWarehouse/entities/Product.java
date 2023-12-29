@@ -45,7 +45,7 @@ public class Product {
     @Column(name = "PLATFORM")
     private String platform;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ORDERS_ID")
     private Order order;
 

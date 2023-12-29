@@ -25,6 +25,8 @@ import { MatInputModule } from "@angular/material/input"; // Aggiunto modulo per
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { CartComponent } from './component/cart/cart.component';
 import { AddProductComponent } from './component/add-product/add-product.component'; // Aggiunto modulo per la barra di ricerca
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { CardCartComponent } from './component/card-cart/card-cart.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { AddProductComponent } from './component/add-product/add-product.compone
     RegistrationComponent,
     CardComponent,
     CartComponent,
-    AddProductComponent
+    AddProductComponent,
+    CardCartComponent
   ],
   imports: [
     BrowserModule,
@@ -51,9 +54,10 @@ import { AddProductComponent } from './component/add-product/add-product.compone
     MatGridListModule,
     MatCardModule,
     MatInputModule, // Aggiunto modulo per la barra di ricerca
-    MatFormFieldModule // Aggiunto modulo per la barra di ricerca
+    MatFormFieldModule, // Aggiunto modulo per la barra di ricerca
+    
   ],
-  providers: [AuthService, CookieService, UserService, ProductService, OrderService],
+  providers: [AuthService, CookieService, UserService, ProductService, OrderService,MatSnackBar],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
