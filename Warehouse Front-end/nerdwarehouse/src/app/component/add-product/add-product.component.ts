@@ -14,42 +14,33 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 })
 export class AddProductComponent{
 
-  //prodotto:ProductDto = {
-    //available:false
-  }
+  prodotto:ProductDto = {
+    available:true}
+  
 
-  /*constructor(private router: Router,
+  constructor(private router: Router,
               private productService : ProductService,
               private cookieService : CookieService,
               private snackBar : MatSnackBar) {}     
+
+    creaInserzione() {
+      const seller = this.cookieService.get("user");
+      this.prodotto.userId = Number(seller);
+      console.log(this.prodotto);
+      if(this.productIsValid(this.prodotto)){
+        this.productService.addProduct(this.prodotto).subscribe(
+          (response) => {
+            console.log(response)
+            this.snackBar.open('Prodotto aggiunto con successo', 'Chiudi', { duration: 3000 });
+            this.router.navigate(['/home']);
+          }
+        );
+      }
+    }
     
-  createInsertion(){
-    const seller = this.cookieService.get("user")
-    this.prodotto.userId = seller;
-    console.log(this.cookieService.get("Token"))
-    console.log(this.prodotto)
-    if(this.acceptableProduct(this.prodotto)){
-      this.productService.addProduct(this.prodotto,this.cookieService.get("Token")).subscribe(
-        (response) = > {
-          this.snackBar.open('Prodotto aggiunto con successo', 'Chiudi', { duration: 3000 });
-          this.router.navigate(['/home']);)
-        }
-      )
+    productIsValid(product: ProductDto): boolean {
+      if (product.title && typeof product.price === 'number' && product.price > 0 && product.price < 10000 && product.description)  return true; 
+      else  return false;
     }
   }
-
-  acceptableProduct(product : ProductDto) : boolean {
-    if (
-      product.title &&
-      typeof product.price === 'number' &&
-      product.price > 0 && product.price < 9999 &&
-      product.description
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-}
-*/
+              

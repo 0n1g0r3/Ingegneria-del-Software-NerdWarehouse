@@ -10,7 +10,7 @@ public class NerdWarehouseApplication {
 	public static void main(String[] args) {
 
 		SpringApplication.run(NerdWarehouseApplication.class, args);
-		System.out.println("Swagger documentation is running at: http://localhost:8010/swagger-ui/index.html");
+		System.out.println("Swagger documentation: http://localhost:8010/swagger-ui/index.html");
 
 	}
 
