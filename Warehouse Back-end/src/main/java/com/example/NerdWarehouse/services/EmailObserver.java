@@ -17,9 +17,10 @@ public class EmailObserver implements UserObserver {
 
     @Override
     public void sendEmail(Order order) {
-        System.out.println(order.getProductList());
+        System.out.println(order.getUser().getEmail());
         emailService.sendSimpleEmail(order.getUser().getEmail(),"Creazione nuovo ordine","Ciao è stato creato un nuovo ordine!");
         for (Product product : order.getProductList()){
+            System.out.println(product.getUser().getEmail());
             emailService.sendSimpleEmail(product.getUser().getEmail(),"Creazione nuovo ordine","Ciao è stato acquistato un tuo prodotto!");
         }
     }

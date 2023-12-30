@@ -2,7 +2,7 @@
 <!-- Prodotti -->
 <div class="card-container">
   <div class="card-item" *ngFor="let item of cartProduct">
-    <app-card [item]="item"></app-card>
+    <app-card-cart [item]="item"></app-card-cart>
   </div>
   <button mat-icon-button (click)="createOrder()">
     <mat-icon>shopping_cart</mat-icon>

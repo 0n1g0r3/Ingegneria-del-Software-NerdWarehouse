@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ProductDto } from 'app/model/productDto';
 
 @Component({
   selector: 'app-card-cart',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class CardCartComponent {
 
+  @Input() item?: ProductDto;
 }

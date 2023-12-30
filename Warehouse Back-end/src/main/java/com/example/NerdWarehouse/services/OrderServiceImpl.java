@@ -14,6 +14,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -41,26 +42,24 @@ public class OrderServiceImpl implements OrderService {
     public OrderDto saveDto(OrderDto orderDto) {
         Optional<User> user = userDao.findById(orderDto.getUserId());
         Order order  = modelMapper.map(orderDto, Order.class);
-        order.setProductList(getProductList(orderDto));
+        order.setUser(user.get());
+        List<Product> productList = new ArrayList<>();
+        for (ProductDto productDto: orderDto.getProductDtoList()){
+            productList.add(productDao.getById(productDto.getId()));
+        }
+        order.setProductList(productList);
         orderDao.save(order);
         for(ProductDto productDto : orderDto.getProductDtoList()){
             productDto.setAvailable(false);
             Product product = modelMapper.map(productDto, Product.class);
             product.setOrder(order);
             productDao.save(product);
-
         }
         emailObserver.sendEmail(order);
         return modelMapper.map(order, OrderDto.class);
     }
 
-    private List<Product> getProductList(OrderDto orderDto) {
-        return orderDto.getProductDtoList().stream()
-                .map(productId -> productDao.findById(productId.getId()))
-                .filter(Optional::isPresent)
-                .map(Optional::get)
-                .collect(Collectors.toList());
-    }
+
 
     @Override
     public List<OrderDto> getAllByUser(Long uId) {

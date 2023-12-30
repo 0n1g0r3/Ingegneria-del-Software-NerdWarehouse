@@ -18,7 +18,6 @@ export class CartComponent implements OnInit{
 
   product: any[] = [];
   cartProduct?: ProductDto[];
-  //selectedPaymentMethod: string = "CARD";
   ordineCreato = false;
   totalCost = 0;
   orderSuccess = false;
@@ -71,6 +70,7 @@ export class CartComponent implements OnInit{
  createOrder(): void {
    if (this.cartProduct!.length === 0) {
      this.snackBar.open("Nessun prodotto nel carrello..." , "OK")
+     
      return;
    }
 
@@ -86,6 +86,7 @@ export class CartComponent implements OnInit{
        this.snackBar.open("Ordine creato, controlla nel tuo profilo.", "OK")
        this.cookieService.delete('cartItems', '/');
        this.cartProduct = []
+       this.router.navigate(['/homepage'])
      },
      (error) => {
        this.snackBar.open("Errore durante la creazione dell ordine." , "RIPROVA")
