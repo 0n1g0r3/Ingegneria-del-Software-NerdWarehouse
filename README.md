@@ -1,10 +1,8 @@
 # 🎮 Nerd Warehouse
 
-**Alessio Carlo — 223486**
+**Alessio Carlo**
 
 Piattaforma web dedicata agli appassionati di fumetti e videogiochi per l'acquisto e la vendita di prodotti usati, tramite pagamento immediato o aste a tempo.
-
-![Copertina](images/copertina.png)
 
 ---
 
